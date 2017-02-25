@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import PostsApi from '../api/posts.js'
 
 export default {
   name: 'posts',
@@ -24,20 +24,16 @@ export default {
     }
   },
   beforeRouteEnter (to, from, next) {
-    axios.get('https://stormy-wildwood-38378.herokuapp.com/posts.json')
-    .then(function (response) {
-      console.log(response)
+    PostsApi.getPosts(_posts => {
       next(vm => {
-        vm.posts = response.data
+        vm.posts = _posts
       })
     })
   },
   watch: {
     $route () {
-      axios.get('https://stormy-wildwood-38378.herokuapp.com/posts.json')
-      .then(function (response) {
-        console.log(response)
-        this.posts = response.data
+      PostsApi.getPosts(_posts => {
+        this.posts = _posts
       })
     }
   }
