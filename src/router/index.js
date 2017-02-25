@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from 'components/Hello'
-import Login from 'components/Login'
+import UserSignIn from 'components/UserSignIn'
 import Posts from 'components/Posts'
 
 Vue.use(Router)
@@ -9,18 +8,18 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'Hello',
-      component: Hello
-    },
-    {
-      path: '/login',
-      name: 'Login',
-      component: Login
+      path: '/users/sign_in',
+      name: 'User.sign_in',
+      component: UserSignIn
     },
     {
       path: '/posts',
-      name: 'Posts',
+      name: 'Posts.index',
+      component: Posts
+    },
+    {
+      path: '/posts/new',
+      name: 'Posts.new',
       component: Posts
     }
   ]

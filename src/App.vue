@@ -13,6 +13,17 @@
           <h3 class="md-title">Sidenav content</h3>
         </div>
       </md-toolbar>
+      <md-list>
+        <md-list-item class="md-inset">
+          <router-link :to="{ name: 'User.sign_in'}">User</router-link>
+        </md-list-item>
+        <md-list-item class="md-inset">
+          <router-link :to="{ name: 'Posts.index'}">Posts</router-link>
+        </md-list-item>
+        <md-list-item class="md-inset">
+          <router-link :to="{ name: 'Posts.new'}">New Post</router-link>
+        </md-list-item>
+      </md-list>
     </md-sidenav>
     <router-view></router-view>
   </div>
