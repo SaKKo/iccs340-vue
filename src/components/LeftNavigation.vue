@@ -2,18 +2,13 @@
   <div class="left-navigation">
     <md-sidenav class="md-left" ref="sidenav">
       <md-toolbar class="md-account-header">
-        <md-list class="md-transparent">
-          <md-list-item>
-            <div class="md-list-text-container">
-              <span>John Doe</span>
-              <span>johndoe@email.com</span>
-            </div>
+        <md-menu>
+          <md-button md-menu-trigger>Guest</md-button>
 
-            <md-button class="md-icon-button md-list-action">
-              <md-icon>arrow_drop_down</md-icon>
-            </md-button>
-          </md-list-item>
-        </md-list>
+          <md-menu-content>
+            <md-menu-item>Login</md-menu-item>
+          </md-menu-content>
+        </md-menu>
       </md-toolbar>
 
       <md-list>
