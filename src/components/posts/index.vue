@@ -1,16 +1,13 @@
 <template>
   <div class="posts">
-    <h1>Posts</h1>
-    <ol>
-      <li v-for="post in posts">
-        <v-post :post="post"></v-post>
-      </li>
-    </ol>
+    <md-list class="custom-list md-triple-line" v-for="post in posts">
+      <v-post :post="post"></v-post>
+    </md-list>
   </div>
 </template>
 
 <script>
-import PostsApi from '../api/posts.js'
+import PostsApi from '../../api/posts.js'
 
 export default {
   name: 'posts',
@@ -23,9 +20,9 @@ export default {
       error: null
     }
   },
-  beforeRouteEnter (to, from, next) {
+  beforeRouteEnter (to, from, _next) {
     PostsApi.getPosts(_posts => {
-      next(vm => {
+      _next(vm => {
         vm.posts = _posts
       })
     })
