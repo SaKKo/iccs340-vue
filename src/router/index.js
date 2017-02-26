@@ -16,12 +16,14 @@ export default new Router({
     {
       path: '/posts',
       name: 'Posts.index',
-      component: Posts
+      component: Posts,
+      meta: { requiresAuth: true }
     },
     {
       path: '/posts/new',
       name: 'Posts.new',
-      component: NewPost
+      component: NewPost,
+      meta: { requiresAuth: true }
     }
   ]
 })

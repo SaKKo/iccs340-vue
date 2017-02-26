@@ -1,8 +1,8 @@
-import axios from 'axios'
+import Vue from 'vue'
 
 export default {
   getPosts (callback, errCallback) {
-    axios.get('https://iccs340-vue-api.herokuapp.com/posts.json')
+    Vue.$http.get('/posts.json')
     .then(function (response) {
       callback(response.data)
     })
@@ -12,7 +12,7 @@ export default {
   },
   createPost (params, callback, errCallback) {
     var postParams = { post: params }
-    axios.post('https://iccs340-vue-api.herokuapp.com/posts.json', postParams)
+    Vue.$http.post('/posts.json', postParams)
     .then(function (response) {
       callback(response.data)
     })
