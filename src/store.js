@@ -17,6 +17,7 @@ const mutations = {
   logout (state) {
     console.log('mutations logout')
     state.auth = false
+    router.push({ name: 'User.sign_in' })
   }
 }
 

@@ -20,7 +20,7 @@
         <div class="md-list-text-container">
           <md-input-container>
             <label>Password</label>
-            <md-input v-model="password" placeholder=""></md-input>
+            <md-input v-model="password" placeholder="" type="password" @keyup.enter.native="login"></md-input>
           </md-input-container>
         </div>
       </md-list-item>
@@ -47,6 +47,7 @@ export default {
   },
   methods: {
     login () {
+      console.log('enter')
       UsersApi.login(this.email, this.password, function (_response) {
         router.push({ name: 'Posts.index' })
       })

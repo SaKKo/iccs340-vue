@@ -28,6 +28,12 @@
               </span>
             </router-link>
         </md-list-item>
+        <md-list-item class="md-primary" @click.native="logout">
+          <md-icon>insert_drive_file</md-icon>
+          <span>
+            Logout
+          </span>
+        </md-list-item>
       </md-list>
     </md-sidenav>
   </div>
@@ -35,11 +41,18 @@
 </template>
 
 <script>
+import UsersApi from '../api/users.js'
+
 export default {
   name: 'left-navigation',
   methods: {
     toggle () {
       this.$refs.sidenav.toggle()
+    },
+    logout () {
+      UsersApi.logout(function () {
+        this.$refs.sidenav.toggle()
+      })
     }
   }
 }

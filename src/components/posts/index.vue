@@ -1,7 +1,9 @@
 <template>
   <div class="posts">
     <md-list class="custom-list md-triple-line" v-for="post in posts">
-      <v-post :post="post"></v-post>
+      <router-link :to="{ name: 'Posts.show', params: {post_id: post.id } }">
+        <v-post :post="post"></v-post>
+      </router-link>
     </md-list>
   </div>
 </template>

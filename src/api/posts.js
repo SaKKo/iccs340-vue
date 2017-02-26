@@ -10,6 +10,15 @@ export default {
       errCallback(response)
     })
   },
+  getPost (uid, callback, errCallback) {
+    Vue.$http.get(`/posts/${uid}.json`)
+    .then(function (response) {
+      callback(response.data)
+    })
+    .catch(function (response) {
+      errCallback(response)
+    })
+  },
   createPost (params, callback, errCallback) {
     var postParams = { post: params }
     Vue.$http.post('/posts.json', postParams)
