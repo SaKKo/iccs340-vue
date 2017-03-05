@@ -10,8 +10,8 @@ import store from './store'
 import Axios from 'axios'
 import UsersApi from './api/users.js'
 
-Axios.defaults.baseURL = 'http://localhost:3000'
-// Axios.defaults.baseURL = 'https://iccs340-vue-api-auth.herokuapp.com/'
+// Axios.defaults.baseURL = 'http://localhost:3000'
+Axios.defaults.baseURL = 'https://iccs340-vue-api-auth.herokuapp.com/'
 Axios.defaults.headers.common.Accept = 'application/json'
 Axios.defaults.withCredentials = true
 Axios.interceptors.request.use(
